@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.smarthquote586267" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>SmarthQuote</name>
+  <name>SmarthQuote-App</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Multi platform App developed to do products offers and requests.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+    <author email="labs@pernix-solutions.com" href="http://labs.pernix-solutions.com/">
+      Pernix-Labs
     </author>
   <content src="index.html"/>
   <access origin="*"/>

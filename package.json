@@ -1,7 +1,7 @@
 {
-  "name": "smarthquote",
+  "name": "smarthquote-app",
   "version": "1.0.0",
-  "description": "SmarthQuote: An Ionic project",
+  "description": "SmarthQuote-App: Multi platform App developed to do products offers and requests.",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

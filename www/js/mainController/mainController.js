@@ -1,7 +1,7 @@
 (function(){
     var app = angular.module('starter', ['ionic'])
 	
-	app.controller('smartLogo', function($scope){
+	  app.controller('smartLogo', function($scope){
       $scope.frontendlogo = "smart_quote_logo.png";
     });
 

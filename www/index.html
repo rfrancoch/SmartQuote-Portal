@@ -9,30 +9,33 @@
     <link href="css/style.css" rel="stylesheet"> 
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/mainController/mainController.js"></script>
   </head>
 
-  <body > 
-  <div ng-app="starter">
+  <body ng-app="starter"> 
     <ion-pane >
+    <ion-view title="home">
       <ion-content class="backgroundInitialPage" ng-controller="smartLogo">
-          <img class="logo_smartquote" ng-src="img/{{frontendlogo}}">
+          
 
-          <div class="list">
-            <label class=" user_information_box item item-input">
-              <span class="input-label"> Correo </span>
+            <img class="logo_smartquote" ng-src="img/{{frontendlogo}}">
+
+            <div class="list">
+              <label class=" user_information_box item item-input">
+                <span class="input-label"> Correo </span>
                 <input type="text">
-            </label>
-            <label class="user_information_box item item-input">
-              <span class="input-label"> Contraseña </span>
+              </label>
+              <label class="user_information_box item item-input">
+                <span class="input-label"> Contraseña </span>
                 <input type="password">
-            </label>
-          </div> 
-        <button class="button_login"> Iniciar </button>  
-        <a href="#" class="button_sing_in"> Crear Cuenta </a> 
-        
+              </label>
+            </div> 
+            <button class="button_login"> Iniciar </button>  
+            <a href="#" class="button_sing_in"> Crear Cuenta </a> 
+         
       </ion-content>
+    </ion-view>
     </ion-pane>
-  </div>
   </body>
 </html>

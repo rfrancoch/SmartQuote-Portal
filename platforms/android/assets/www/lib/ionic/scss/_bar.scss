@@ -373,11 +373,11 @@
 }
 
 .bar-subheader {
-  top: $bar-height;
+  top: 16px;
   display: block;
-
-  height: $bar-subheader-height;
+  height: 44px;
 }
+
 .bar-subfooter {
   bottom: $bar-footer-height;
   display: block;

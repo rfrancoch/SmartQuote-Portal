@@ -1,4 +1,11 @@
 {
-  "name": "SmarthQuote",
-  "app_id": ""
+  "name": "SmartQuote",
+  "app_id": "",
+  "gulpStartupTasks": ["sass",   "watch"
+  ],
+  
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

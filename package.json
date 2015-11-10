@@ -1,7 +1,7 @@
 {
-  "name": "smarthquote-app",
+  "name": "smartquote-app",
   "version": "1.0.0",
-  "description": "SmarthQuote-App: Multi platform App developed to do products offers and requests.",
+  "description": "SmartQuote-App: Multi platform App developed to do products offers and requests.",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

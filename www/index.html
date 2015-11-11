@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="smartquote">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -13,13 +13,12 @@
     <script src="js/mainController/mainController.js"></script>
   </head>
 
-  <body ng-app="starter"> 
+  <body> 
     <ion-pane >
-    <ion-view title="home">
+    <ion-view title="Inicio">
       <ion-content class="backgroundInitialPage" ng-controller="smartLogo">
-          
-
-            <img class="logo_smartquote" ng-src="img/{{frontendlogo}}">
+        <div ng-view> 
+          <img class="logo_smartquote" ng-src="img/{{frontendlogo}}">
 
             <div class="list">
               <label class=" user_information_box item item-input">
@@ -31,9 +30,8 @@
                 <input type="password">
               </label>
             </div> 
-            <button class="button_login"> Iniciar </button>  
-            <a href="#" class="button_sing_in"> Crear Cuenta </a> 
-         
+            <a href="/home.html"><button class="button_login" > Iniciar </button></a>
+            <a href="/home.html" class="button_sing_in"> Crear Cuenta </a> 
       </ion-content>
     </ion-view>
     </ion-pane>

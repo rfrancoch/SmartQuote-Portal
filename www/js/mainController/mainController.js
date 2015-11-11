@@ -1,15 +1,15 @@
 (function(){
-    var app = angular.module('starter', ['ionic'])
+    var mainCtl = angular.module('smartquote', ['ionic'])
 	
-	  app.controller('smartLogo', function($scope){
+	  mainCtl.controller('smartLogo', function($scope){
       $scope.frontendlogo = "smart_quote_logo.png";
     });
 
-    app.controller('backgroundInitial', function($scope){
+    mainCtl.controller('backgroundInitial', function($scope){
       $scope.frontendbackground = "background.png";
     });
 
-    app.controller('button', function($scope, $routeParams, $location){
+    mainCtl.controller('button', function($scope, $routeParams, $location){
       $scope.buttonname = "Create Account";
       $scope.go = function(){
         $window.location.href = ' / ';

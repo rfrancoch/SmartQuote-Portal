@@ -37,9 +37,29 @@
 }
 
 .button_sing_in{
-	text-align: center;
-	font-size: 15px;
-	color: #423B3B;
-	margin-right: 50%;
-	margin-left:  37%;
+  text-align: center;
+  font-size: 15px;
+  color: #423B3B;
+  margin-right: 50%;
+  margin-left:  37%;
+}
+
+.backgroundHomePage{
+  background: rgb(88,88,90);
+  height: 100%;
+  width: 100%;
+}
+
+.need_buy_icon{
+  width: 60%;
+  margin: auto;
+  padding: 23px;
+  margin: 40% 50% 0% 20%;
+}
+
+.want_sell_icon{
+  width: 60%;
+  margin: auto;
+  padding: 23px;
+  margin: 0% 50% 0% 20%;
 }

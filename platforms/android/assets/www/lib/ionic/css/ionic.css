@@ -3091,8 +3091,8 @@ a.subdued {
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
-    border-color: #0c63ee;
-    background-color: #387ef5;
+    border-color: #111;
+    background-color: #111;
     background-image: linear-gradient(0deg, #0c63ee, #0c63ee 50%, transparent 50%);
     color: #fff; }
     .bar.bar-positive .title {
@@ -3453,8 +3453,10 @@ a.subdued {
   padding: 0; }
 
 .bar-subheader {
-  top: 44px;
+  top: 16px;
   display: block;
+  background-color: #C0C0C0;
+  padding: 35px;
   height: 44px; }
 
 .bar-subfooter {
@@ -7496,6 +7498,10 @@ a.button {
 
 .dark-border {
   border-color: #111; }
+
+.logo_smartQuote{
+  background-image: url("/www/img/smart_quote_logo.png");
+}
 
 [collection-repeat] {
   /* Position is set by transforms */

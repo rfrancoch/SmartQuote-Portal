@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="smartquote">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>SmarthQuote</title>
-
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
+      <title>SmartQuote</title>
+   
+    <link href="/css/ionic.app.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src=/lib/ionic/js/ionic.bundle.js"></script>
+    <script src="/cordova.js"></script>
+    <script src="app.js"></script>
+    <script src="js/login/login.controller.js"></script>
+    <script src="js/login/home.controller.js"></script>
   </head>
-  <body ng-app="starter">
 
-    <ion-pane>
-      <ion-header-bar class="bar-positive">
-      </ion-header-bar>
-      <ion-subheader-bar class="bar bar-subheader">
-      </ion-subheader-bar>
-      <ion-content>
+  <body> 
+    <ion-pane >
+    <ion-view title="Inicio">
+      <ion-content class="backgroundInitialPage" ng-controller="smartLogo">
+
+          <img class="logo_smartquote" ng-src="img/{{frontendlogo}}">
+
+            <div class="list">
+              <label class=" user_information_box item item-input">
+                <span class="input-label"> Correo </span>
+                <input type="text">
+              </label>
+              <label class="user_information_box item item-input">
+                <span class="input-label"> Contraseña </span>
+                <input type="password">
+              </label>
+            </div> 
+            <a href="/home.html"><button class="button_login" > Iniciar </button></a>
+            <a href="/home.html" class="button_sing_in"> Crear Cuenta </a> 
       </ion-content>
+    </ion-view>
     </ion-pane>
-    <div class="bar bar-footer bar-dark">
-      </div>
   </body>
 </html>

@@ -1,1 +1,65 @@
-/* Empty. Add your own CSS if you like */
+.backgroundInitialPage{
+  background-image: url("../img/background.png"); 
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.logo_smartquote{
+  width: 92%;
+  margin: auto;
+  padding: 23px;
+  margin-top: 40%;
+  margin-left: 4%;
+  margin-right: 50%;
+}
+
+.user_information_box{
+  margin-left: 15%;
+  margin-right: 20%;
+  border-width: 5px;
+  border-color: rgba(204, 204, 204, 0) rgba(204, 204, 204, 0) #FF5907 rgba(204, 204, 204, 0);
+  background-color: rgba(204, 204, 204, 0);
+  color: #444;
+
+}
+
+.button_login{
+  margin-right: 50%;
+  margin-left: 39%;
+  margin-bottom: 28px;
+  background-color: #FF5907;
+  color: white;
+  padding: 3px 11px 3px 11px;
+  font-size:20px;
+  border-style: hidden;
+}
+
+.button_sing_in{
+  text-align: center;
+  font-size: 15px;
+  color: #423B3B;
+  margin-right: 50%;
+  margin-left:  37%;
+}
+
+.backgroundHomePage{
+  background: rgb(88,88,90);
+  height: 100%;
+  width: 100%;
+}
+
+.need_buy_icon{
+  width: 60%;
+  margin: auto;
+  padding: 23px;
+  margin: 40% 50% 0% 20%;
+}
+
+.want_sell_icon{
+  width: 60%;
+  margin: auto;
+  padding: 23px;
+  margin: 0% 50% 0% 20%;
+}

@@ -1,45 +1,49 @@
-<ion-view title="MainMenu">
-   <div class="tabs-striped tabs-top barMenuCategories">
-       <div class="tabs">
-           <a class="tab-item active" href="/categorylistneedbuy.html">
-               Quiero Comprar
-           </a>
-           <a class="tab-item" href="#">
-               Quiero Vender
-           </a>
-       </div>
-   </div>
+<div class="requisitionform">
+<div class="tabs-striped tabs-top barMenuCategories">
+   	<div class="tabs">
+        <a class="tab-item active" href="/categorylistneedbuy.html">
+            Quiero Comprar
+        </a>
+        <a class="tab-item" href="#">
+            Quiero Vender
+        </a>
+    </div>
+</div>
 
-   <div class="list">
-		<label class="item item-input item-floating-label" id="description-address-container">
-		  <textarea placeholder="Descripción"></textarea>
-		</label>
-		<label class="item item-input item-floating-label" id="description-address-container">
-		  	<textarea placeholder="Dirección"></textarea>
-		</label>
-		<label class="item item-input item-floating-label">
-		    <span class="input-label">Cantidad</span>
-			<input type="number" placeholder="Cantidad">
-		</label>
-		<label class="item item-input item-floating-label">
-		    <span class="input-label">Precio máximo</span>
-		    <input type="number" placeholder="Precio máximo">
-		</label>
-		<label class="item item-input item-floating-label">
-		    <span class="input-label">Precio base</span>
-			<input type="number" placeholder="Precio base">
-		</label>
-		<label class="item item-input item-floating-label">
-		    <span class="input-label">Fecha límite</span>
-		    <input type="date" placeholder="Fecha límite">
-		</label>
-	</div>
+<div class="list">
+	<label class="item item-input item-floating-label" id="description-address-container">
+		<textarea placeholder="Descripción" class="descriptionAndAddressTextArea"></textarea>
+	</label>
+	<hr class="lineseparator">
+	<label class="item item-input item-floating-label" id="description-address-container">
+		<textarea placeholder="Dirección" class="descriptionAndAddressTextArea"></textarea>
+	</label>
+	<hr class="lineseparator">
+	<label class="item item-input item-floating-label">
+		<span class="input-label">Cantidad</span>
+		<input type="number" placeholder="Cantidad">
+	</label>
+	<hr class="lineseparator">
+	<label class="item item-input item-floating-label">
+		<span class="input-label">Precio máximo</span>
+		<input type="number" placeholder="Precio máximo">
+	</label>
+	<hr class="lineseparator">
+	<label class="item item-input item-floating-label">
+		<span class="input-label">Precio base</span>
+		<input type="number" placeholder="Precio base">
+	</label>
+	<hr class="lineseparator">
+	<label class="item item-input item-floating-label">
+		<span class="input-label">Fecha limite</span>
+		<input type="date" placeholder="Fecha límite">
+	</label>
+</div>
 
-
-   <button class="button button-dark" id="AcceptButton">
-	Aceptar
-	</button>
- </ion-view>
+<button class="button button-outline button-light" id="AcceptButton">
+  Aceptar
+</button>
+</div>
 
 
 

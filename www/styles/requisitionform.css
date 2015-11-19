@@ -1,0 +1,35 @@
+#description-field{
+	height: 30%;
+}
+
+#description-container{
+	height: 15%;
+}
+
+.item-input input, .item-input textarea{
+ 	 height: 100%;
+ 	 width: 100%;
+}
+
+.list{
+	width: 80%;
+	height: 80%;
+	margin: 20% auto auto auto;
+	padding: 10px;
+	border-radius: 3%;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top{
+	top: 0%;
+}
+
+.requisitionform-container{
+	background: black;
+}
+
+#AcceptButton{
+	height: 0%;
+    width: 22%;
+    left: 35%;
+    top:80%;
+}

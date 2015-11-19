@@ -5841,7 +5841,9 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   padding-top: 8px; }
 
 .item-input input, .item-input textarea {
-  width: 100%; }
+  width: 100%; 
+  height: 100%;
+}
 
 textarea {
   padding-left: 0; }

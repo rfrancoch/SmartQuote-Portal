@@ -84,3 +84,7 @@ textarea::-webkit-input-placeholder {
 	font-weight: bold;
 }
 
+.tabs-striped .tab-item.activated{
+	border-color: rgb(245,123,32);
+}
+

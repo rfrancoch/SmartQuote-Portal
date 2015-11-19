@@ -79,3 +79,8 @@ textarea::-webkit-input-placeholder {
 	font-weight: bold;
 }
 
+.item-input input{
+	color:black;
+	font-weight: bold;
+}
+

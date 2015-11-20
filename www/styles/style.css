@@ -1,1 +1,25 @@
 /* Empty. Add your own CSS if you like */
+
+.button-primary{
+  border: solid white;
+  color:white;
+  height: 0%;
+  width: 30%;
+  left: 35%;
+  margin-top: 5%;
+}
+
+.content {
+  background-color: rgb(88,88,90);
+}
+
+.content .list {
+  width: 90%;
+  height: 73%;
+  margin: 20% auto auto auto;
+  border-radius: 25px;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: rgb(245,123,32);
+}

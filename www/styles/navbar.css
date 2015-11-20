@@ -1,0 +1,18 @@
+.tabs-striped .tabs {
+  background-color: transparent;
+  color: white;
+  border-style: none;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top{
+  top: 0%;
+}
+
+.tabs-striped .tab-item.active{
+  color: white;
+  border: 1px solid rgb(245,123,32);
+}
+
+.tabs-striped .tab-item.activated{
+  border-color: rgb(245,123,32);
+}

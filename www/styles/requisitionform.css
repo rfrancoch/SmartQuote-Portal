@@ -1,15 +1,15 @@
-#description-field{
-	height: 30%;
-}
-
-#description-container{
-	height: 15%;
+#description-address-container{
+	height: 18%;
 }
 
 .item-input input, .item-input textarea{
  	 height: 100%;
  	 width: 100%;
  	 background-color: transparent;
+}
+
+.descriptionAndAddressTextArea{
+	height: 100%;
 }
 
 .list{
@@ -57,6 +57,7 @@
 
 .input-label{
 	color: black;
+	font-weight: bold;
 }
 
 .tabs-striped .tab-item.active{
@@ -77,14 +78,33 @@ input::-webkit-input-placeholder {
 textarea::-webkit-input-placeholder {
  	color:black;
 	font-weight: bold;
+	font-size: 120%;
 }
 
 .item-input input{
 	color:black;
 	font-weight: bold;
+	font-size: medium;
 }
 
 .tabs-striped .tab-item.activated{
 	border-color: rgb(245,123,32);
 }
 
+.input-group-addon
+{
+    background-color:#FFF;
+}
+
+.item-floating-label .input-label.has-input{
+	font-weight: bold;
+
+}
+
+.item-input{
+	border-style: none;
+}
+
+.currency{
+	width: 30% !important;
+}

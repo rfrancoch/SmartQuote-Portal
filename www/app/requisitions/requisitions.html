@@ -12,11 +12,13 @@
 
 <div class="list">
 	<label class="item item-input item-floating-label" id="description-address-container">
-		<textarea placeholder="Descripción" class="descriptionAndAddressTextArea"></textarea>
+		<span class="input-label">Descripcion</span>
+		<input type="text" placeholder="Descripción" class="descriptionAndAddressTextArea"></input>
 	</label>
 	<hr class="lineseparator">
 	<label class="item item-input item-floating-label" id="description-address-container">
-		<textarea placeholder="Dirección" class="descriptionAndAddressTextArea"></textarea>
+		<span class="input-label">Direccion</span>
+		<input type="text"placeholder="Dirección" class="descriptionAndAddressTextArea"></input>
 	</label>
 	<hr class="lineseparator">
 	<label class="item item-input item-floating-label">
@@ -24,17 +26,17 @@
 		<input type="number" placeholder="Cantidad">
 	</label>
 	<hr class="lineseparator">
-	<label class="item item-input item-floating-label">
-		<span class="input-label">Precio máximo</span>
-		<input type="number" placeholder="Precio máximo">
+	<label class="item item-input">
+	  <span class="input-label">Precio base </span>
+	  ₡<input type="number" class="currency">
 	</label>
 	<hr class="lineseparator">
-	<label class="item item-input item-floating-label">
-		<span class="input-label">Precio base</span>
-		<input type="number" placeholder="Precio base">
+	<label class="item item-input">
+	  <span class="input-label">Precio maximo </span>
+	  ₡<input type="number" class="currency">
 	</label>
 	<hr class="lineseparator">
-	<label class="item item-input item-floating-label">
+	<label class="item item-input">
 		<span class="input-label">Fecha limite</span>
 		<input type="date" placeholder="Fecha límite">
 	</label>

@@ -26,3 +26,11 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 bower_components
+platforms/browser/build/package.zip
+package.json
+platforms/browser/browser.json
+platforms/browser/config.xml
+platforms/browser/cordova/build.bat
+platforms/browser/cordova/defaults.xml
+platforms/browser/cordova/lib/build.js
+platforms/browser/cordova/run

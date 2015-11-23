@@ -10,10 +10,10 @@
   /* @ngInject */
   function config($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('login', {
         url: '/',
-        templateUrl: 'app/home/home.html',
-        controller: 'HomeController',
+        templateUrl: 'app/login/login.html',
+        controller: 'LoginController',
         controllerAs: 'ctrl'
       });
 

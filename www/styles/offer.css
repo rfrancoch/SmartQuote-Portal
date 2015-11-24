@@ -1,0 +1,11 @@
+.item-input select {
+  height: 100%;
+  width: fill;
+  background-color: transparent;
+  border: none;
+}
+
+.item-input date {
+  background-color: transparent;
+  max-width: 50%;
+}

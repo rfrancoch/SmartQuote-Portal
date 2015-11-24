@@ -8,7 +8,8 @@
       'ui.router',
       'smartquote.home',
       'smartquote.requisitions',
-      'smartquote.categories'
+      'smartquote.categories',
+      'smartquote.payment'
     ]);
 
 })();

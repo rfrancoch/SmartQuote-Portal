@@ -5,11 +5,15 @@
     .module('smartquote.login')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = [];
+  LoginController.$inject = ['$scope'];
 
   /* @ngInject */
-  function LoginController() {
-    var vm = this;
+  function LoginController($scope) {
+    var vm = $scope;
+
+    vm.email  = {
+        text: 'me@example.com'
+      };
 
     activate();
 

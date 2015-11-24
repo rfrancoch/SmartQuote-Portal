@@ -1,0 +1,60 @@
+id_offer
+card_number
+card_month
+card_year
+card_account_name
+amount
+<div class="content">
+	<div class="tabs-striped tabs-top">
+		<div class="tabs">
+	    	<a class="tab-item active" ui-sref="home">Pago</a>
+	  	</div>
+	</div>
+	<div class="list">
+	    <label class="item item-input">
+			<span class="input-label">Oferta: </span>
+	    </label>
+    	<hr class="lineseparator">
+    	<label class="item item-input">
+			<span class="input-label">Número de tarjeta:</span>
+			<input class="inputCard" type="number" 
+			min="1000" max="9999" name="creditCard1" 
+			id="creditCard1" required/>-
+			<input class="inputCard" type="number" 
+			min="1000" max="9999" name="creditCard2" 
+			id="creditCard2" required/>-
+			<input class="inputCard" type="number" 
+			min="1000" max="9999" name="creditCard3" 
+			id="creditCard3" required/>-
+			<input class="inputCard" type="number" 
+			min="1000" max="9999"  name="creditCard4" 
+			id="creditCard4" required/>
+		</label>
+		<label class="item item-input">
+			<span class="input-label">Fecha de expiración:</span>
+			<input class="inputCard" name="expiry" 
+			id="expiry" type="month" required/>
+		</label>
+		<hr class="lineseparator">
+		<label class="item item-input">
+			<span class="input-label">Tipo de entrega:</span>
+			<select placeholder="Tipo"></select>
+		</label>
+		<hr class="lineseparator">
+		<label class="item item-input">
+			<span class="input-label">Comentarios:</span>
+			<textarea type="text"></textarea>
+	    </label>
+		<hr class="lineseparator">
+			<label class="item item-input">
+			<span class="input-label">Fecha de apertura:</span>
+			<input type="date">
+		</label>
+		<hr class="lineseparator">
+			<label class="item item-input">
+			<span class="input-label">Fecha límite:</span>
+			<input type="date">
+		</label>
+  	</div>
+
+  <button class="button button-outline button-light button-primary">Aceptar</button>

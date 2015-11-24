@@ -9,7 +9,8 @@
       'smartquote.home',
       'smartquote.login',
       'smartquote.requisitions',
-      'smartquote.categories'
+      'smartquote.categories',
+      'smartquote.payment'
     ]);
 
 })();

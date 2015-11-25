@@ -1,4 +1,10 @@
 {
   "name": "SmarthQuote",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/talend",
+      "proxyUrl": "http://104.197.90.46/talend"
+    }
+  ]
 }

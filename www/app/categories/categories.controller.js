@@ -3,35 +3,36 @@
 
   angular
     .module('smartquote.categories')
-    .controller('CategoriesController', CategoriesController);
+    .controller('CategoriesController', ['$scope', 'ApiCategories', function($scope, apiResource){
+      var ctrlScope = $scope;
+      
+      ctrlScope.categories = [];
+      ctrlScope.selectedCategory = {};
 
-  CategoriesController.$inject = ['$scope'];
+      apiResource.query(
+        {}, 
+        function(data){
+          if (angular.isUndefined(data) || angular.isUndefined(data.categories)){
+            ctrlScope.categories = [];            
+          } else if (angular.isArray(data.categories)) {
+            ctrlScope.categories = data.categories;
+          } else {
+            ctrlScope.categories = [];
+            ctrlScope.categories.push(data.categories);
+          }
+        }, 
+        function(response){
+          console.log(response);
+        });
 
-  /* @ngInject */
-  function CategoriesController($scope) {
-    var vm = $scope;
+      ctrlScope.isSelected = function(category){
+        return ctrlScope.selectedCategory == category;
+      };
 
-    vm.categories = [
-      {'id' : 1, 'name' : 'Artículos para Oficina'},
-      {'id' : 2, 'name' : 'Alimentos'},
-      {'id' : 3, 'name' : 'Hogar'},
-      {'id' : 4, 'name' : 'Otros'},
-      {'id' : 5, 'name' : 'Relleno'}
-    ];
-    vm.selectedCategory = 3;
+      ctrlScope.selectCategory = function(category){
+        ctrlScope.selectedCategory = category;
+      };
 
-    vm.selectCategory = selectCategory;
+    }]);
 
-
-    activate();
-
-    ////////////////
-
-    function activate() {
-    }
-
-    function selectCategory(category) {
-      vm.selectedCategory = category.id;
-    }
-  }
 })();

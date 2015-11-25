@@ -3,10 +3,10 @@
 
   <div class="list">
     <ul class="categories-list">
-      <li class="item" ng-class="{ 'selected': selectedCategory === category.id}" 
+      <li class="item" ng-class="{ 'selected': isSelected(category)}" 
         ng-repeat="category in categories" 
         ng-click="selectCategory(category)">
-          <span>{{category.name}}</span>
+          <span title="{{category.description}}">{{category.title}}</span>
         </li>
     </ul>
   </div>

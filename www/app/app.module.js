@@ -7,6 +7,7 @@
       'ionic',
       'ui.router',
       'smartquote.home',
+      'smartquote.login',
       'smartquote.requisitions',
       'smartquote.categories'
     ]);

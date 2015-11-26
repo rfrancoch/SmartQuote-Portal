@@ -1,0 +1,16 @@
+<div class="background-initial-page">
+  <img src="../assets/images/smart_quote_logo.png" class="logo-smartquote"></img>
+    <form action="categories.html">
+      <div class="control-group" ng-class="{true: 'error'}[submitted && form.email.$invalid]">
+      <label class="user-information-box item item-input">
+        <span class="input-label" for="email"> Correo </span>
+        <input type="email" name="email" required />
+      </label>
+      <label class=" user-information-box item item-input">
+          <span class="input-label"> Contraseña </span>
+          <input type="password" name="password" required/>
+      </label>
+      <input type="submit" class="button-login" value="Iniciar">
+      <a ui-sref="categories" class="button-sign-in"> Crear Cuenta </a> 
+    </form>
+</div>

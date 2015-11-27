@@ -4,4 +4,5 @@
   angular
     .module('smartquote.payment', [
     ]);
+
 })();

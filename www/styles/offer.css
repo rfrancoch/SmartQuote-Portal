@@ -28,5 +28,5 @@
 	border: none;
 	background-color: transparent;
 	-webkit-appearance: none;  /*Removes default chrome and safari style*/
-    -moz-appearance: none; /* Removes Default Firefox style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
 }

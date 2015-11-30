@@ -1,0 +1,32 @@
+.item-input select {
+  height: 100%;
+  width: fill;
+  background-color: transparent;
+  border: none;
+}
+
+.item-input date {
+  background-color: transparent;
+  max-width: 50%;
+}
+
+.open-date {
+	width: 50%;
+}
+
+.offer-quantity {
+	width: 50%;
+}
+
+.offer-days {
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+	width: 100px;
+}
+
+.option-offer{
+	border: none;
+	background-color: transparent;
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+}

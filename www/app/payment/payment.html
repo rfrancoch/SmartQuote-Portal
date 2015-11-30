@@ -1,0 +1,40 @@
+
+<div class="content-payment">
+  <div class="tabs-striped tabs-top">
+    <div class="tabs">
+	  <a class="tab-item active" ui-sref="home">Pago</a>
+	</div>
+  </div>
+  <br>
+  <div class="list-payment">
+    <label class="item item-input">
+      <span class="input-label">Oferta: </span>
+    </label>
+    <hr class="lineseparator">
+    <label class="item item-input">
+      <span class="input-label">Nombre:</span>
+      <input type="text" size="50" placeholder="Nombre completo">
+    </label>		
+    <hr class="lineseparator">
+    <label class="row item item-input">
+      <span class="col responsive-sm input-label">N° tarjeta:</span> 
+      <input  type="credit-card" size="20" class="item item-input col-67 responsive-sm"
+      name="card" placeholder="xxxx xxxx xxxx xxxx"/>
+    </label>
+    <hr class="lineseparator">
+    <label class="row item item-input">
+      <span class="col input-label">Vencimiento:</span> 
+      <input type="month" class="col-67 date" style="padding-right: 0px; padding-left: 20px;"/>		
+    </label>
+    <hr class="lineseparator">
+    <label class="item item-input">
+      <span class=" input-label">CVC:</span> 
+      <input type="text" min="3" max="4" placeholder="xxxx"/>		
+    </label>
+    <hr class="lineseparator">
+    <label class="item item-input">
+      <span class="input-label">Total:</span>
+      <span> </span>
+    </label>
+  </div>
+  <button class="button button-outline button-light button-primary">Aceptar</button>

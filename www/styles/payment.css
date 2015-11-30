@@ -1,0 +1,14 @@
+.content-payment {
+  background-color: rgb(88,88,90);
+}
+
+.content-payment .list-payment {
+  width: 90%;
+  height: 65%;
+  margin: 20% auto auto auto;
+  border-radius: 25px;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: rgb(245,123,32);
+}

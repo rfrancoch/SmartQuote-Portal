@@ -31,25 +31,17 @@
 
       ctrlScope.selectCategory = function(category){
         ctrlScope.selectedCategory = category;
-      };
 
-      ctrlScope.showConfirmSubscribe = function() {
         var confirmPopup = $ionicPopup.confirm({
           title: 'SmartQuote App',
           template: '¿Desea subscribirse a la Categoria?'
         });
-        confirmPopup.then(function(res) {
-          if(res) {
-            apiSubscription.save({ subscription: { id_user: 1, id_category: ctrlScope.selectedCategory.id } });
-          } else { 
-            }
-        });
+          confirmPopup.then(function(dataResponse) {
+            if(dataResponse) {
+              apiSubscription.save({ subscription: { id_user: 1, id_category: ctrlScope.selectedCategory.id } });
+            } else { 
+              }
+          });
       };
-
-      ctrlScope.subscribe = function(user){
-        apiResource.save({id_user: user.id, id_category: ctrlScope.selectedCategory.id });
-      };
-
     }]);
-
 })();

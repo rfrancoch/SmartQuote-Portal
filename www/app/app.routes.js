@@ -2,21 +2,15 @@
   'use strict';
 
   angular
-    .module('smartquote')
-    .config(config);
+    .module('smartquote',['smartquote.login','smartquote.categories','smartquote.subscription','smartquote.provider','smartquote.requisitions'])
+    .config(function($stateProvider, $urlRouterProvider){
+      $stateProvider
+        .state('login', {
+          url: '/',
+          templateUrl: 'app/login/login.html',
+          controller: 'LoginController'
+        });      
+      $urlRouterProvider.otherwise('/');      
+    });
 
-  config.$inject = ['$stateProvider', '$urlRouterProvider'];
-
-  /* @ngInject */
-  function config($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('login', {
-        url: '/',
-        templateUrl: 'app/login/login.html',
-        controller: 'LoginController',
-        controllerAs: 'ctrl'
-      });
-
-    $urlRouterProvider.otherwise('/');
-  }
 })();

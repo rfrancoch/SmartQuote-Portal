@@ -23,3 +23,62 @@
   overflow-x: hidden;
   color: rgb(245,123,32);
 }
+
+.link-button {
+  color: #423B3B;
+}
+.link-button:hover {
+  color: #FF5907;
+}
+.link-button:visited {
+  color: #423B3B;
+}
+.link-button:active {
+  color: #FF5907;
+}
+
+.button {
+    border-color: rgb(245,123,32);
+    background-color: rgb(245,123,32);
+    color: #fff;
+}
+.button:hover {
+    border-color: #FF5907;
+    background-color: rgb(245,123,32);
+    color: #fff;
+    text-decoration: none;
+}
+.button:active {
+    border-color: #FF5907;
+    background-color: #fff;
+    color: rgb(245,123,32);
+    text-decoration: none;
+}
+.button.button-positive {
+    border-color: #FF5907;
+    background-color: rgb(245,123,32);
+    color: #fff;
+}
+.button.button-positive:active, .button.button-positive:focus {
+    border-color: #FF5907;
+    background-color: #fff;
+    color: rgb(245,123,32);
+}
+
+
+.sq-list {
+  display:inline;
+  list-style: none;
+}
+.sq-list li {
+  text-align: center;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(245,123,32);
+  color: rgb(245,123,32);
+  cursor: pointer;
+}
+.sq-list li.selected, .sq-list li:hover {
+  background-color: rgb(245,123,32);
+  color: white;
+}

@@ -3,22 +3,28 @@
 
   angular
     .module('smartquote')
-    .run(run);
+    .run(function($ionicPlatform, $rootScope, $state) {
 
-  run.$inject = ['$ionicPlatform'];
+      $rootScope.$on('$stateChangeStart', function (event, next, nextParams, fromState) {
+        if (angular.isDefined(window.localStorage.getItem("user")) &&
+          window.localStorage.getItem("user") != null) 
+        {
+          console.log("from: " + fromState + " to: " + next);
+        } 
+        else if (next.name !== 'login') {
+            event.preventDefault();
+            $state.go('login');
+        }
+      });
 
-  /* @ngInject */
-  function run($ionicPlatform) {
-    $ionicPlatform.ready(function() {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      if(window.cordova && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      }
-      if(window.StatusBar) {
-        StatusBar.styleDefault();
-      }
+      $ionicPlatform.ready(function() {
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+          StatusBar.styleDefault();
+        }
+      });
     });
-  }
 
 })();

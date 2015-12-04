@@ -3,7 +3,7 @@
 
   angular
     .module('smartquote.categories')
-    .controller('CategoriesController', ['$scope', '$ionicPopup','ApiCategories', 'ApiSubscription',function($scope, $ionicPopup, apiResource, apiSubscription){
+    .controller('CategoriesController', ['$scope', '$ionicPopup','ApiCategories', 'ApiSubscriptions',function($scope, $ionicPopup, apiResource, apiSubscription){
       var ctrlScope = $scope;
       
       ctrlScope.categories = [];

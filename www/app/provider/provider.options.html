@@ -1,14 +1,19 @@
-<div class="content">
-  <smartquote-navbar active-tab="'vender'"></smartquote-navbar>
-
+<ion-header-bar align-title="left">
+    <smartquote-navbar active-tab="'vender'"></smartquote-navbar>
+</ion-header-bar>
+<ion-content>
   <div class="list">
     <ul class="sq-list">
       <li class="item">
-        <span ui-sref="categories" title="Recibir notificaciones de solicitudes en una categoría">Suscribirme</span>
+        <span ui-sref="provider-subscriptions" 
+              title="Recibir notificaciones de nuevas solicitudes en una categoría">Mis suscripciones</span>
       </li>
       <li class="item">
-        <span ui-sref="offer" title="Hacer una nueva oferta">Ofertar</span>
+        <span ui-sref="provider-offer" title="Hacer una nueva oferta">Hacer oferta</span>
       </li>
     </ul>
   </div>
-</div>
+</ion-content>
+<ion-footer-bar align-title="left" ng-if="user.isprovider">
+  <h1 class="title">Proveedores</h1>
+</ion-footer-bar>

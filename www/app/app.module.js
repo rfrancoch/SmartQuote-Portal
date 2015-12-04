@@ -6,11 +6,14 @@
   angular.module('smartquote', [
       'ionic',
       'ui.router',
+      'ngResource',
       'smartquote.home',
       'smartquote.login',
       'smartquote.requisitions',
-      'smartquote.subscription',
+      'smartquote.subscriptions',
       'smartquote.categories',
+      'smartquote.providers',
+      'smartquote.clients'
     ]);
 
 })();

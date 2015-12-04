@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('smartquote.login', ['ionic', 'ngResource']);
+    .module('smartquote.login', []);
     
 })();

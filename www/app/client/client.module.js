@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('smartquote.providers', []);
+    .module('smartquote.clients', []);
 
 })();

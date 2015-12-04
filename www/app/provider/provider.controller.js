@@ -2,46 +2,135 @@
   'use strict';
 
   angular
-    .module('smartquote.provider')
-    .controller('ProviderController', ['$scope', '$ionicPopup','ApiProvider', 'ApiSubscription',function($scope, $ionicPopup, apiResource, apiSubscription){
-      var ctrlScope = $scope;
-      
-      ctrlScope.providers = [];
-      ctrlScope.selectedCategory = {};
+    .module('smartquote.providers')
+    .controller('ProviderOptionsController', ['$scope', '$ionicPopup','ApiProviders',function($scope, $ionicPopup, apiResource){
+      var vm = $scope;
+     
+      vm.user = JSON.parse(window.localStorage.getItem("user"));
 
-      apiResource.query(
+    }])
+    .controller('ProviderOfferController', ['$scope','$location','$ionicPopup','ApiProviders',function($scope, $location, $ionicPopup, apiResource){
+      var vm = $scope;
+     
+      vm.user = JSON.parse(window.localStorage.getItem("user"));
+      vm.requisitions = [];
+      vm.offer = {
+        id_user: vm.user.id
+      };
+
+      apiResource.getRequisitions(vm.user.id, function(data) {
+        vm.requisitions = data;
+      });
+
+      vm.save = function (){
+        apiResource.setOffer(vm.offer,
+          function(response){
+            $ionicPopup.alert({
+                title: 'SmartQuote',
+                template: 'Nueva oferta enviada'
+              }).then(function() {
+                console.log(response);
+                vm.offer = {
+                  id_user: vm.user.id
+                };               
+                $location.path("/provider");
+              });
+          },
+          function(response){
+            $ionicPopup.alert({
+                title: 'SmartQuote',
+                template: 'No se pudo guardar la oferta'
+              }).then(function(res) {
+                console.log(response);
+              });
+          })
+      };
+
+    }])
+    .controller('ProviderSubscriptionsController', ['$scope', '$ionicPopup','ApiProviders', 'ApiCategories', 'ApiSubscriptions',function($scope, $ionicPopup, apiResource, apiCategories, apiSubscription){
+      var vm = $scope;
+      
+      vm.user = JSON.parse(window.localStorage.getItem("user"));
+      vm.categories = [];
+      vm.subscriptions = [];
+
+      apiResource.getSubscriptions(vm.user.id, function(data) {
+        vm.subscriptions = data;
+      });
+
+      apiCategories.query(
         {}, 
         function(data){
-          if (angular.isUndefined(data) || angular.isUndefined(data.providers)){
-            ctrlScope.providers = [];            
-          } else if (angular.isArray(data.providers)) {
-            ctrlScope.providers = data.providers;
-          } else {
-            ctrlScope.providers = [];
-            ctrlScope.providers.push(data.providers);
+          if (angular.isDefined(data) && angular.isDefined(data.categories)){
+            if (angular.isArray(data.categories)) {
+              vm.categories = data.categories;
+            } else {
+              vm.categories.push(data.categories);
+            }
           }
         }, 
         function(response){
           console.log(response);
         });
 
-      ctrlScope.isSelected = function(category){
-        return ctrlScope.selectedCategory == category;
+      vm.isSelected = function(category){
+        var element = null;
+        angular.forEach(vm.subscriptions, function(value, key) {
+            if (value != null && value['id'] == category.id) {
+              element = value;
+            }
+        });
+        return (element != null);
       };
 
-      ctrlScope.selectCategory = function(category){
-        ctrlScope.selectedCategory = category;
+      vm.subscribe = function(category) {
+        $ionicPopup.confirm({
+          title: 'SmartQuote',
+          template: '¿Desea desuscribirse a '+category.title+'?'
+        })
+        .then(function(dataResponse) {
+          if(dataResponse) {
+            apiSubscription.delete({ 
+                id_user: vm.user.id, 
+                id_category: category.id 
+              }, 
+              function(data) {
+                apiResource.getSubscriptions(vm.user.id, function(data) {
+                  vm.subscriptions = data;
+                });                 
+              });
+          }
+        });        
+      }
 
-        var confirmPopup = $ionicPopup.confirm({
-          title: 'SmartQuote App',
-          template: '¿Desea subscribirse a la Categoria?'
-        });
-          confirmPopup.then(function(dataResponse) {
-            if(dataResponse) {
-              apiSubscription.save({ subscription: { id_user: 1, id_category: ctrlScope.selectedCategory.id } });
-            } else { 
-              }
-          });
+      vm.unsubscribe = function(category) {
+        $ionicPopup.confirm({
+          title: 'SmartQuote',
+          template: '¿Desea suscribirse a '+category.title+'?'
+        })
+        .then(function(dataResponse) {
+          if(dataResponse) {
+            apiSubscription.save({
+               subscription: { 
+                  id_user: vm.user.id, 
+                  id_category: category.id 
+                }
+              }, 
+              function(data) {
+                apiResource.getSubscriptions(vm.user.id, function(data) {
+                  vm.subscriptions = data;
+                });                 
+              });
+          }
+        });        
+      }
+
+      vm.selectCategory = function(category){
+        if (vm.isSelected(category)) {
+          vm.subscribe(category);
+        } else {
+          vm.unsubscribe(category);
+        }
       };
     }]);
 })();

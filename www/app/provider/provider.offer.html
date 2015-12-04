@@ -1,0 +1,46 @@
+<ion-header-bar align-title="left">
+    <smartquote-navbar active-tab="'vender'"></smartquote-navbar>
+</ion-header-bar>
+<ion-content>
+  <form ng-submit="save()">
+    <div class="list">
+      <label class="item item-input item-select">
+        <span class="input-label">Solicitud</span>
+        <select ng-model="offer.id_requisition" name="id_requisition" ng-options="r.id as r.description for r in requisitions track by r.id">
+          <option value=""> - Seleccione una - </option>
+        </select>
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Monto</span>
+        <span>₡</span>
+        <input ng-model="offer.amount" type="number" placeholder="Monto de la oferta">
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Duración</span>
+        <input ng-model="offer.delivery_speed" type="number" placeholder="Días para entrega">
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input item-select">
+        <span class="input-label">Lugar</span>
+        <select ng-model="offer.delivery_type" name="delivery_type">
+          <option value=""> - Entrega en - </option>
+          <option value="0">Sucursal</option>
+          <option value="1">Entrega al domicilio</option>
+          <option value="2">Otro</option>
+        </select>
+      </label> 
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Comentarios</span>
+        <input ng-model="offer.comments" type="text" placeholder="Comentarios">
+      </label>
+      <br/>  
+    </div>
+    <input type="submit" class="button button-outline button-light button-primary" value="Aceptar">
+  </form>
+</ion-content>
+<ion-footer-bar align-title="left" ng-if="user.isprovider">
+  <h1 class="title">Hacer oferta</h1>
+</ion-footer-bar>

@@ -9,14 +9,28 @@
   margin-top: 5%;
 }
 
-.content {
+input {
+  text-align: right;
+}
+option {
+  text-align: right;
+}
+
+.bar-header {
   background-color: rgb(88,88,90);
 }
 
-.content .list {
+.bar-fotter {
+  background-color: rgb(88,88,90);
+}
+
+.scroll-content {
+  background-color: rgb(88,88,90);
+}
+.scroll-content .list {
   width: 90%;
   height: 73%;
-  margin: 20% auto auto auto;
+  margin: 10% auto auto auto;
   border-radius: 25px;
   background-color: white;
   overflow-y: auto;
@@ -38,33 +52,32 @@
 }
 
 .button {
-    border-color: rgb(245,123,32);
-    background-color: rgb(245,123,32);
-    color: #fff;
+  border-color: rgb(245,123,32);
+  background-color: rgb(245,123,32);
+  color: #fff;
 }
 .button:hover {
-    border-color: #FF5907;
-    background-color: rgb(245,123,32);
-    color: #fff;
-    text-decoration: none;
+  border-color: #FF5907;
+  background-color: rgb(245,123,32);
+  color: #fff;
+  text-decoration: none;
 }
 .button:active {
-    border-color: #FF5907;
-    background-color: #fff;
-    color: rgb(245,123,32);
-    text-decoration: none;
+  border-color: #FF5907;
+  background-color: #fff;
+  color: rgb(245,123,32);
+  text-decoration: none;
 }
 .button.button-positive {
-    border-color: #FF5907;
-    background-color: rgb(245,123,32);
-    color: #fff;
+  border-color: #FF5907;
+  background-color: rgb(245,123,32);
+  color: #fff;
 }
 .button.button-positive:active, .button.button-positive:focus {
-    border-color: #FF5907;
-    background-color: #fff;
-    color: rgb(245,123,32);
+  border-color: #FF5907;
+  background-color: #fff;
+  color: rgb(245,123,32);
 }
-
 
 .sq-list {
   display:inline;

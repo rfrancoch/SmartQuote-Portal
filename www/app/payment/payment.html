@@ -2,24 +2,23 @@
 <div class="content-payment">
   <div class="tabs-striped tabs-top">
     <div class="tabs">
-	  <a class="tab-item active" ui-sref="home">Pago</a>
-	</div>
+      <a class="tab-item active" ui-sref="home">Pago</a>
+    </div>
   </div>
   <br>
   <div class="list-payment">
     <label class="item item-input">
       <span class="input-label">Oferta: </span>
+      <span class="input-label" id="offername">Oferta 1 </span>
     </label>
     <hr class="lineseparator">
     <label class="item item-input">
       <span class="input-label">Nombre:</span>
       <input type="text" size="50" placeholder="Nombre completo">
-    </label>		
+    </label>    
     <hr class="lineseparator">
     <label class="row item item-input">
       <span class="col responsive-sm input-label">N° tarjeta:</span> 
-      <!--input  type="credit-card" size="20" class="item item-input col-67 responsive-sm"
-      name="card" onkeypress="return isNumberKey(event)" placeholder="xxxx xxxx xxxx xxxx"/-->
       <input type="text" name="creditCard" ng-model="ccinfo.number" required 
       data-credit-card-type data-ng-pattern="/^[0-9]+$/" data-ng-minlength="16"
       maxlength="16" placeholder="xxxx xxxx xxxx xxxx" class="item item-input col-67 responsive-sm"
@@ -28,8 +27,6 @@
     <hr class="lineseparator">
     <label class="row item item-input">
       <span class="col input-label">Vencimiento:</span> 
-      <!--input type="month" class="col-67 date" style="padding-right: 0px; padding-left: 20px;"/-->		
-
       <select class="col-25 item-input responsive" name="month" size="1">
         <option value=1>Enero</option>
         <option value=2>Febrero</option>
@@ -63,7 +60,6 @@
     <hr class="lineseparator">
     <label class="item item-input">
       <span class=" input-label">CVC:</span> 
-      <!--input type="text" min="3" max="4" onkeypress="return isNumberKey(event)" placeholder="xxxx"/-->		
       <input type="text" name="securityCode" ng-model="ccinfo.securityCode" placeholder="xxxx"
       required data-ng-pattern="/^[0-9]+$/" data-ng-minlength="3" maxlength="4"
       onkeypress="return isNumberKey(event)" class="item item-input col-67 responsive-sm">
@@ -71,7 +67,8 @@
     <hr class="lineseparator">
     <label class="item item-input">
       <span class="input-label">Total:</span>
-      <span> </span>
+      <span class="input-label">₡</span>
+      <span class="input-label" id="totaloffer">10 000.00</span>
     </label>
   </div>
-  <button class="button button-outline button-light button-primary">Aceptar</button>
+  <button class="button button-outline button-light button-primary">Pagar</button>

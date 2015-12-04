@@ -18,18 +18,55 @@
     <hr class="lineseparator">
     <label class="row item item-input">
       <span class="col responsive-sm input-label">N° tarjeta:</span> 
-      <input  type="credit-card" size="20" class="item item-input col-67 responsive-sm"
-      name="card" placeholder="xxxx xxxx xxxx xxxx"/>
+      <!--input  type="credit-card" size="20" class="item item-input col-67 responsive-sm"
+      name="card" onkeypress="return isNumberKey(event)" placeholder="xxxx xxxx xxxx xxxx"/-->
+      <input type="text" name="creditCard" ng-model="ccinfo.number" required 
+      data-credit-card-type data-ng-pattern="/^[0-9]+$/" data-ng-minlength="16"
+      maxlength="16" placeholder="xxxx xxxx xxxx xxxx" class="item item-input col-67 responsive-sm"
+      onkeypress="return isNumberKey(event)"> {{ccinfo.type}}
     </label>
     <hr class="lineseparator">
     <label class="row item item-input">
       <span class="col input-label">Vencimiento:</span> 
-      <input type="month" class="col-67 date" style="padding-right: 0px; padding-left: 20px;"/>		
+      <!--input type="month" class="col-67 date" style="padding-right: 0px; padding-left: 20px;"/-->		
+
+      <select class="col-25 item-input responsive" name="month" size="1">
+        <option value=1>Enero</option>
+        <option value=2>Febrero</option>
+        <option value=3>Marzo</option>
+        <option value=4>Abril</option>
+        <option value=5>Mayo</option>
+        <option value=6>Junio</option>
+        <option value=7>Julio</option>
+        <option value=8>Agosto</option>
+        <option value=9>Setiembre</option>
+        <option value=10>Octubre</option>
+        <option value=11>Noviembre</option>
+        <option value=12>Diciembre</option>
+      </select>
+      <!--select id="YearList"></select-->
+      <select id="YearList" class="col-33 item-input">
+        <option value=15>2015</option>
+        <option value=16>2016</option>
+        <option value=17>2017</option>
+        <option value=18>2018</option>
+        <option value=19>2019</option>
+        <option value=20>2020</option>
+        <option value=21>2021</option>
+        <option value=22>2022</option>
+        <option value=23>2023</option>
+        <option value=24>2024</option>
+        <option value=25>2025</option>
+      </select>
+
     </label>
     <hr class="lineseparator">
     <label class="item item-input">
       <span class=" input-label">CVC:</span> 
-      <input type="text" min="3" max="4" placeholder="xxxx"/>		
+      <!--input type="text" min="3" max="4" onkeypress="return isNumberKey(event)" placeholder="xxxx"/-->		
+      <input type="text" name="securityCode" ng-model="ccinfo.securityCode" placeholder="xxxx"
+      required data-ng-pattern="/^[0-9]+$/" data-ng-minlength="3" maxlength="4"
+      onkeypress="return isNumberKey(event)" class="item item-input col-67 responsive-sm">
     </label>
     <hr class="lineseparator">
     <label class="item item-input">

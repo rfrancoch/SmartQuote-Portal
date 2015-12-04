@@ -13,8 +13,7 @@
       .state('payment', {
         url: '/payment',
         templateUrl: 'app/payment/payment.html',
-        controller: 'PaymentController',
-        controllerAs: 'ctrl'
+        controller: 'PaymentController'
       });
   }
 })();

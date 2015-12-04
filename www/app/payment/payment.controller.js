@@ -3,19 +3,27 @@
 
   angular
     .module('smartquote.payment')
-    .controller('PaymentController', PaymentController);
+    .controller('PaymentController', ['$scope', function($scope) {
 
-  PaymentController.$inject = [];
+      console.log("inicializado payment");
+      var vm = $scope;
+      vm.years = [];
+      vm.payment = {};
 
-  /* @ngInject */
-  function PaymentController() {
-    var vm = this;
+      vm.months =[]
 
-    activate();
+      activate();
 
-    ////////////////
+      function activate() {
+        vm.payment.card_year = new Date().getFullYear();
+        for (var i=0; i<11; i++){
+          vm.years.push({
+            value: i + vm.payment.card_year,
+            text: i + vm.payment.card_year
+          });
+        }
+      }
 
-    function activate() {
-    }
-  }
+      
+    }]);
 })();

@@ -13,7 +13,8 @@
       'smartquote.subscriptions',
       'smartquote.categories',
       'smartquote.providers',
-      'smartquote.clients'
+      'smartquote.clients',
+      'smartquote.payment'
     ]);
 
 })();

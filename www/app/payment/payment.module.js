@@ -1,0 +1,99 @@
+(function() {
+  'use strict';
+
+  angular
+    .module('smartquote.payment', []);
+
+  angular
+    .module('smartquote.payment').controller
+  ( 'MainCtrl'
+  , function($scope,$locale) {
+      $scope.currentYear = new Date().getFullYear()
+      $scope.currentMonth = new Date().getMonth() + 1
+      $scope.months = $locale.DATETIME_FORMATS.MONTH
+      $scope.ccinfo = {type:undefined}
+      $scope.save = function(data){
+        if ($scope.paymentForm.$valid){
+          console.log(data) // valid data saving stuff here
+        }
+      }
+    }
+  )
+
+angular.module('smartquote.payment').directive
+  ( 'creditCardType'
+  , function(){
+    var directive =
+      { require: 'ngModel'
+      , link: function(scope, elm, attrs, ctrl){
+          ctrl.$parsers.unshift(function(value){
+            scope.ccinfo.type =
+              (/^5[1-5]/.test(value)) ? "mastercard"
+              : (/^4/.test(value)) ? "visa"
+              : (/^3[47]/.test(value)) ? 'amex'
+              : (/^6011|65|64[4-9]|622(1(2[6-9]|[3-9]\d)|[2-8]\d{2}|9([01]\d|2[0-5]))/.test(value)) ? 'discover'
+              : undefined
+            ctrl.$setValidity('invalid',!!scope.ccinfo.type)
+            return value
+          })
+        }
+      }
+      return directive
+    }
+  )
+
+angular.module('smartquote.payment').directive
+  ( 'cardExpiration'
+  , function(){
+      var directive =
+        { require: 'ngModel'
+        , link: function(scope, elm, attrs, ctrl){
+            scope.$watch('[ccinfo.month,ccinfo.year]',function(value){
+              ctrl.$setValidity('invalid',true)
+              if ( scope.ccinfo.year == scope.currentYear
+                   && scope.ccinfo.month <= scope.currentMonth
+                 ) {
+                ctrl.$setValidity('invalid',false)
+              }
+              return value
+            },true)
+          }
+        }
+      return directive
+      }
+    )
+
+angular.module('smartquote.payment').filter
+  ( 'range'
+  , function() {
+      var filter = 
+        function(arr, lower, upper) {
+          for (var i = lower; i <= upper; i++) arr.push(i)
+          return arr
+        }
+      return filter
+    }
+  )
+
+angular.module('smartquote.payment').directive
+('numbersOnly', function () {
+  return {
+    require: 'ngModel',
+    link: function (scope, element, attr, ngModelCtrl) {
+      function fromUser(text) {
+        if (text) {
+          var transformedInput = text.replace(/[^0-9]/g, '');
+          if (transformedInput !== text) {
+              ngModelCtrl.$setViewValue(transformedInput);
+              ngModelCtrl.$render();
+          }
+          return transformedInput;
+        }
+        return undefined;
+      }            
+      ngModelCtrl.$parsers.push(fromUser);
+    }
+  };
+})
+  
+})();

@@ -1,0 +1,63 @@
+<ion-header-bar align-title="left">
+    <smartquote-navbar active-tab="'comprar'"></smartquote-navbar>
+</ion-header-bar>
+<ion-content>
+  <div class="list">
+    <label class="item item-input">
+      <span class="input-label">Oferta: </span>
+      <span class="input-label" id="offername">Oferta 1 </span>
+    </label>
+    <hr class="lineseparator">
+    <label class="item item-input">
+      <span class="input-label">Nombre:</span>
+      <input type="text" size="50" placeholder="Nombre completo">
+    </label>    
+    <hr class="lineseparator">
+    <label class="row item item-input">
+      <span class="col responsive-sm input-label">N° tarjeta:</span> 
+      <input type="text" numbers-only ng-model="ccinfo.number" required 
+      data-ng-minlength="16"
+      maxlength="16" placeholder="xxxx xxxx xxxx xxxx"
+      class="item item-input col-67 responsive"> {{ccinfo.type}}
+    </label>
+    <hr class="lineseparator">
+    <label class="row item item-input">
+      <span class="col input-label">Mes vencimiento:</span> 
+      <select ngmodel="payment.card_month" class="col-25 item-input responsive" name="month" size="1">
+        <option value="1">Enero</option>
+        <option value="2">Febrero</option>
+        <option value="3">Marzo</option>
+        <option value="4">Abril</option>
+        <option value="5">Mayo</option>
+        <option value="6">Junio</option>
+        <option value="7">Julio</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+    </label>
+    <hr class="lineseparator">
+    <label class="row item item-input">
+      <span class="col input-label">Año vencimiento:</span> 
+      <select ng-model="payment.card_year" ng-options="y.value as y.text for y in years"
+      class="col-25 item-input responsive">
+      </select>
+    </label>
+    <hr class="lineseparator">
+    <label class="item item-input">
+      <span class=" input-label">CVC:</span> 
+      <input type="text" name="securityCode" ng-model="ccinfo.securityCode" placeholder="xxxx"
+      required numbers-only data-ng-minlength="3" maxlength="4"
+      ng-model="payment.cvc" class="item item-input col-75 responsive">
+    </label>
+    <hr class="lineseparator">
+    <label class="item item-input">
+      <span class="input-label">Total:</span>
+      <span class="input-label">₡</span>
+      <span class="input-label" id="totaloffer">10 000.00</span>
+    </label>
+  </div>
+  <button class="button button-outline button-light button-primary">Pagar</button>
+</ion-content>

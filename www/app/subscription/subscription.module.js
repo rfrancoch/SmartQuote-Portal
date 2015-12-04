@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('smartquote.subscription', ['ionic', 'ngResource']);
+    .module('smartquote.subscriptions', ['ionic', 'ngResource']);
 
 })();

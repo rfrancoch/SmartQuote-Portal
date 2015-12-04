@@ -1,0 +1,59 @@
+<ion-header-bar align-title="left">
+  <smartquote-navbar active-tab="'comprar'"></smartquote-navbar>
+</ion-header-bar>
+<ion-content>
+  <form ng-submit="save()">
+    <div class="list">
+      <label class="item item-input item-select">
+        <span class="input-label">Categoría</span>
+        <select ng-model="requisition.id_category" name="id_category" ng-options="c.id as c.title for c in categories track by c.id">
+          <option value=""> - Seleccione una - </option>
+        </select>
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Descripción</span>
+        <input ng-model="requisition.description" type="text" placeholder="Descripción">
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Dirección</span>
+        <input ng-model="requisition.shipping_address" type="text" placeholder="Dirección">
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Cantidad</span>
+        <input ng-model="requisition.quantity" type="number" min="1" value="1" placeholder="Cantidad">
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Precio base </span>
+        <span>₡</span>
+        <input ng-model="requisition.base_amount" type="number" min="0" class="currency">
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Precio máximo </span>
+        <span>₡</span>
+        <input ng-model="requisition.max_amount" type="number" min="0" class="currency">
+      </label>
+      <hr class="lineseparator">
+      <label class="item item-input">
+        <span class="input-label">Fecha límite</span>
+        <input ng-model="requisition.limit_date" type="date" placeholder="Fecha límite">
+      </label>
+      <br/>
+    </div>
+    <input type="submit" class="button button-outline button-light button-primary" value="Aceptar">
+  </form>
+  <br/>
+  <br/>
+</ion-content>
+<ion-footer-bar align-title="left" ng-if="user.isclient">
+  <h1 class="title">Nueva compra</h1>
+</ion-footer-bar>
+
+
+
+
+

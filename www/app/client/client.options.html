@@ -1,0 +1,18 @@
+<ion-header-bar align-title="left">
+    <smartquote-navbar active-tab="'comprar'"></smartquote-navbar>
+</ion-header-bar>
+<ion-content>
+  <div class="list">
+    <ul class="sq-list">
+      <li class="item">
+        <span ui-sref="client-requisitions" title="Ver mis solicitudes de compra">Mis solicitudes</span>
+      </li>
+      <li class="item">
+        <span ui-sref="client-new-requisition" title="Hacer una nueva solicitud de compra">Nueva compra</span>
+      </li>
+    </ul>
+  </div>
+</ion-content>
+<ion-footer-bar align-title="left" ng-if="user.isclient">
+  <h1 class="title">Clientes</h1>
+</ion-footer-bar>

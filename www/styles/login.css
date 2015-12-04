@@ -24,20 +24,3 @@
   background-color: rgba(204, 204, 204, 0);
   color: #444;
 }
-
-.button-login{
-  margin: 4% 50% 4% 39%;
-  background-color: #FF5907;
-  color: white;
-  padding: 3px 11px 3px 11px;
-  font-size:20px;
-  border-style: hidden;
-}
-
-.button-sign-in{
-  text-align: center;
-  font-size: 15px;
-  color: #423B3B;
-  margin-right: 50%;
-  margin-left:  37%;
-}

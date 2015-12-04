@@ -9,17 +9,89 @@
   margin-top: 5%;
 }
 
-.content {
+input {
+  text-align: right;
+}
+option {
+  text-align: right;
+}
+
+.bar-header {
   background-color: rgb(88,88,90);
 }
 
-.content .list {
+.bar-fotter {
+  background-color: rgb(88,88,90);
+}
+
+.scroll-content {
+  background-color: rgb(88,88,90);
+}
+.scroll-content .list {
   width: 90%;
   height: 73%;
-  margin: 20% auto auto auto;
+  margin: 10% auto auto auto;
   border-radius: 25px;
   background-color: white;
   overflow-y: auto;
   overflow-x: hidden;
   color: rgb(245,123,32);
+}
+
+.link-button {
+  color: #423B3B;
+}
+.link-button:hover {
+  color: #FF5907;
+}
+.link-button:visited {
+  color: #423B3B;
+}
+.link-button:active {
+  color: #FF5907;
+}
+
+.button {
+  border-color: rgb(245,123,32);
+  background-color: rgb(245,123,32);
+  color: #fff;
+}
+.button:hover {
+  border-color: #FF5907;
+  background-color: rgb(245,123,32);
+  color: #fff;
+  text-decoration: none;
+}
+.button:active {
+  border-color: #FF5907;
+  background-color: #fff;
+  color: rgb(245,123,32);
+  text-decoration: none;
+}
+.button.button-positive {
+  border-color: #FF5907;
+  background-color: rgb(245,123,32);
+  color: #fff;
+}
+.button.button-positive:active, .button.button-positive:focus {
+  border-color: #FF5907;
+  background-color: #fff;
+  color: rgb(245,123,32);
+}
+
+.sq-list {
+  display:inline;
+  list-style: none;
+}
+.sq-list li {
+  text-align: center;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(245,123,32);
+  color: rgb(245,123,32);
+  cursor: pointer;
+}
+.sq-list li.selected, .sq-list li:hover {
+  background-color: rgb(245,123,32);
+  color: white;
 }

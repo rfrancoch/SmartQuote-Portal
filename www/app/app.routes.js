@@ -3,20 +3,18 @@
 
   angular
     .module('smartquote')
-    .config(config);
+    .config(function($stateProvider, $urlRouterProvider){
+      $stateProvider
+        .state('login', {
+          url: '/',
+          templateUrl: 'app/login/login.html',
+          controller: 'LoginController'
+        })
+        .state('logout', {
+          url: '/logout',
+          controller: 'LogoutController'
+        });      
+      $urlRouterProvider.otherwise('/');      
+    });
 
-  config.$inject = ['$stateProvider', '$urlRouterProvider'];
-
-  /* @ngInject */
-  function config($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('login', {
-        url: '/',
-        templateUrl: 'app/login/login.html',
-        controller: 'LoginController',
-        controllerAs: 'ctrl'
-      });
-
-    $urlRouterProvider.otherwise('/');
-  }
 })();

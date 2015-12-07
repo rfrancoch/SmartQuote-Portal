@@ -3,7 +3,7 @@
 
   angular
     .module('smartquote.login')
-    .controller('LoginController',  ['$scope', '$ionicPopup', '$location', '$http', function($scope, $ionicPopup, $location, $http){
+    .controller('LoginController',  ['$scope', '$ionicPopup', '$location', '$http', 'TalendEndPoint', function($scope, $ionicPopup, $location, $http, TalendEndPoint){
       var vm = $scope;
 
       if (window.localStorage.getItem("user")) {
@@ -28,7 +28,7 @@
 
       vm.login = function() {
         console.log("login submit : " + vm.email);
-        $http.post('/talend/api/user/login',
+        $http.post(TalendEndPoint.url + '/api/user/login',
           { 
             credentials: {
               email: vm.email,

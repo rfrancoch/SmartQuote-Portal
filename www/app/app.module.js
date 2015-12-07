@@ -14,6 +14,10 @@
       'smartquote.categories',
       'smartquote.providers',
       'smartquote.clients'
-    ]);
+    ])
+    .constant('TalendEndPoint', {
+      url: 'http://104.197.90.46/talend'
+      //url: '/talend'
+    });
 
 })();

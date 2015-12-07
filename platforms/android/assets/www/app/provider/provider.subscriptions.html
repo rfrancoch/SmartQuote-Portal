@@ -1,0 +1,17 @@
+<ion-header-bar align-title="left">
+    <smartquote-navbar active-tab="'vender'"></smartquote-navbar>
+</ion-header-bar>
+<ion-content>
+  <div class="list">
+    <ul class="sq-list">
+      <li class="item" ng-class="{ 'selected': isSelected(category)}" 
+        ng-repeat="category in categories" 
+        ng-click="selectCategory(category)">
+          <span title="{{category.description}}">{{category.title}}</span>
+        </li>
+    </ul>
+  </div>
+</ion-content>
+<ion-footer-bar align-title="left" ng-if="user.isprovider">
+  <h1 class="title">Mis suscripciones</h1>
+</ion-footer-bar>

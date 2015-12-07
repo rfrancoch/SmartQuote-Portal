@@ -3,7 +3,7 @@
 
   angular
     .module('smartquote.requisitions')
-    .service('ApiRequisition', function ($http) {
+    .service('ApiRequisition', function ($http, TalendEndPoint) {
         this.setRequisition = function(requisition, succeedCallback, failedCallback){
           var day = requisition.limit_date.getDate();
           var month = requisition.limit_date.getMonth() + 1;
@@ -11,7 +11,7 @@
           var data = { requisition:{} };
           angular.copy(requisition, data.requisition);
           data.requisition.limit_date = year + (month < 10 ? "-0" : "-") + month + (day < 10 ? "-0" : "-") + day;
-          $http.post('/talend/api/requisition/', data)
+          $http.post(TalendEndPoint.url + '/api/requisition/', data)
             .then(
               succeedCallback, 
               failedCallback
@@ -20,7 +20,7 @@
         this.getRequisition =  function(id_requisition, callback) {
           if (id_requisition > 0) {
             var requisition = null;
-            $http.get('/talend/api/requisition/'+id_requisition)
+            $http.get(TalendEndPoint.url + '/api/requisition/'+id_requisition)
               .then(function(response) {
                 console.log('Success', response.statusText + "(" + response.status + ")");
                 if (angular.isDefined(response.data) && angular.isDefined(response.data.requisitions)){
@@ -39,7 +39,7 @@
         };
         this.getRequisitionOffers =  function(id_requisition, callback) {
           var offers = [];
-          $http.get('/talend/api/requisition/'+id_requisition+'/offers')
+          $http.get(TalendEndPoint.url + '/api/requisition/'+id_requisition+'/offers')
             .then(function(response) {
               console.log('Success', response.statusText + "(" + response.status + ")");
               if (angular.isDefined(response.data) && angular.isDefined(response.data.offers)){

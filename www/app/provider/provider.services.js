@@ -4,6 +4,10 @@
   angular
     .module('smartquote.providers')
     .service('ApiProviders', function ($http) {
+        this.getDeliveryTypes = function(callback){
+              if (angular.isFunction(callback))
+                callback(['Entrega en sucursal', 'Entrega al Domiciio', 'Entrega en local']); 
+        };
         this.setOffer = function(offer, succeedCallback, failedCallback){
           $http.post('/talend/api/offer/',
             {

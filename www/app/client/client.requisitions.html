@@ -4,10 +4,10 @@
 <ion-content>
   <div class="list">
     <ul class="sq-list">
-      <li class="item" ng-class="{ 'selected': isSelected(requisition)}" 
+      <li class="item"
         ng-repeat="requisition in requisitions" 
-        ng-click="selectRequisition(requisition)">
-          <span>{{requisition.description}}</span>
+        ui-sref="requisition-offer({id: requisition.id})">
+          <span>{{requisition.id}} - {{requisition.description}}</span>
         </li>
     </ul>
   </div>

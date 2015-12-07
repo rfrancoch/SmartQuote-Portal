@@ -1,43 +1,51 @@
-<div class="content">
+<ion-header-bar align-title="left">
   <smartquote-navbar active-tab="'comprar'"></smartquote-navbar>
-
+</ion-header-bar>
+<ion-content>
   <div class="list">
     <label class="item item-input">
-      <span class="input-label">Descripción</span>
-      <textarea type="text" placeholder="Descripción"></textarea>
+      <span class="input-label">Categoría</span>
+      {{requisition.category_title}}
     </label>
-    <hr class="lineseparator">
+    <label class="item item-input">
+      <span class="input-label">Descripción</span>
+      {{requisition.description}}
+    </label>
     <label class="item item-input">
       <span class="input-label">Dirección</span>
-      <textarea type="text"placeholder="Dirección"></textarea>
+      {{requisition.shipping_address}}
     </label>
-    <hr class="lineseparator">
     <label class="item item-input">
       <span class="input-label">Cantidad</span>
-      <input type="number" min="1" value="1" placeholder="Cantidad">
+      {{requisition.quantity}}
     </label>
-    <hr class="lineseparator">
     <label class="item item-input">
       <span class="input-label">Precio base </span>
       <span>₡</span>
-      <input type="number" min="0" class="currency">
+      {{requisition.base_amount}}
     </label>
-    <hr class="lineseparator">
-    <label class="item item-input">
-      <span class="input-label">Precio máximo </span>
-      <span>₡</span>
-      <input type="number" min="0" class="currency">
-    </label>
-    <hr class="lineseparator">
     <label class="item item-input">
       <span class="input-label">Fecha límite</span>
-      <input type="date" placeholder="Fecha límite">
+      {{requisition.limit_date | date:"dd-MM-yyyy"}}
     </label>
+    <label class="item item-input">
+      <span class="input-label">Ofertas</span>
+      {{offers.length}}
+    </label>
+    <ul class="sq-list">
+      <li class="item" ng-class="{ 'selected': isSelected(offer)}" 
+        ng-repeat="offer in offers | orderBy:'priority'" 
+        ng-click="payOffer(offer)">
+          <span>₡</span>
+          <span>{{offer.amount}}</span>
+          <span>en {{offer.delivery_in_days}} d&iacute;as</span>
+          <span>{{delivery_types[offer.delivery_type]}}</span>
+        </li>
+    </ul>
   </div>
-
-  <button class="button button-outline button-light button-primary">Aceptar</button>
-</div>
-
-
-
+  <br/>
+</ion-content>
+<ion-footer-bar align-title="left" ng-if="user.isclient">
+  <h1 class="title">Solicitud #{{requisition.id}}</h1>
+</ion-footer-bar>
 

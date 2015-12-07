@@ -6,9 +6,13 @@
     <div class="list">
       <label class="item item-input item-select">
         <span class="input-label">Solicitud</span>
-        <select ng-model="offer.id_requisition" name="id_requisition" ng-options="r.id as r.description for r in requisitions track by r.id">
+        <select ng-model="offer.id_requisition" name="id_requisition" ng-options="r.id as r.id + ' - ' + r.description for r in requisitions track by r.id">
           <option value=""> - Seleccione una - </option>
         </select>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Monto base</span>
+        {{selectedRequisition().base_amount}}
       </label>
       <hr class="lineseparator">
       <label class="item item-input">
@@ -24,11 +28,8 @@
       <hr class="lineseparator">
       <label class="item item-input item-select">
         <span class="input-label">Lugar</span>
-        <select ng-model="offer.delivery_type" name="delivery_type">
+        <select ng-model="offer.delivery_type" name="delivery_type" ng-options="delivery_types.indexOf(dt) as dt for dt in delivery_types">
           <option value=""> - Entrega en - </option>
-          <option value="0">Sucursal</option>
-          <option value="1">Entrega al domicilio</option>
-          <option value="2">Otro</option>
         </select>
       </label> 
       <hr class="lineseparator">

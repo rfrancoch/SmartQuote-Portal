@@ -10,11 +10,10 @@
   /* @ngInject */
   function config($stateProvider) {
     $stateProvider
-      .state('requisitions', {
-        url: '/requisitions',
+      .state('requisition-offer', {
+        url: '/requisition/:id/offers',
         templateUrl: 'app/requisitions/requisitions.html',
-        controller: 'RequisitionsController',
-        controllerAs: 'ctrl'
+        controller: 'RequisitionsController'
       });
   }
 })();

@@ -3,9 +3,13 @@
 
   angular
     .module('smartquote.providers')
-    .service('ApiProviders', function ($http) {
+    .service('ApiProviders', function ($http, TalendEndPoint) {
+        this.getDeliveryTypes = function(callback){
+              if (angular.isFunction(callback))
+                callback(['Entrega en sucursal', 'Entrega al Domiciio', 'Entrega en local']); 
+        };
         this.setOffer = function(offer, succeedCallback, failedCallback){
-          $http.post('/talend/api/offer/',
+          $http.post(TalendEndPoint.url + '/api/offer/',
             {
               offer: offer
             })
@@ -16,7 +20,7 @@
         };
         this.getSubscriptions =  function(id_user, callback) {
           var categories = [];
-          $http.get('/talend/api/user/'+id_user+'/categories')
+          $http.get(TalendEndPoint.url + '/api/user/'+id_user+'/categories')
             .then(function(response) {
               console.log('Success', response.statusText + "(" + response.status + ")");
               if (angular.isDefined(response.data) && angular.isDefined(response.data.categories)){
@@ -34,7 +38,7 @@
         };
         this.getRequisitions =  function(id_user, callback) {
           var requisitions = [];
-          $http.get('/talend/api/user/'+id_user+'/requisitions/foroffer')
+          $http.get(TalendEndPoint.url + '/api/user/'+id_user+'/requisitions/foroffer')
             .then(function(response) {
               console.log('Success', response.statusText + "(" + response.status + ")");
               if (angular.isDefined(response.data) && angular.isDefined(response.data.requisitions)){

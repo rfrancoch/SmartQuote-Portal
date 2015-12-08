@@ -1,0 +1,13 @@
+<div class="content">
+  <smartquote-navbar active-tab="'vender'"></smartquote-navbar>
+
+  <div class="list">
+    <ul class="sq-list">
+      <li class="item" ng-class="{ 'selected': isSelected(category)}" 
+        ng-repeat="category in categories" 
+        ng-click="selectCategory(category)">
+          <span title="{{category.description}}">{{category.title}}</span>
+        </li>
+    </ul>
+  </div>
+</div>

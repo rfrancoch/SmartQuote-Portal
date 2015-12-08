@@ -1,0 +1,51 @@
+<ion-header-bar align-title="left">
+  <smartquote-navbar active-tab="'comprar'"></smartquote-navbar>
+</ion-header-bar>
+<ion-content>
+  <div class="list">
+    <label class="item item-input">
+      <span class="input-label">Categoría</span>
+      {{requisition.category_title}}
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Descripción</span>
+      {{requisition.description}}
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Dirección</span>
+      {{requisition.shipping_address}}
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Cantidad</span>
+      {{requisition.quantity}}
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Precio base </span>
+      <span>₡</span>
+      {{requisition.base_amount}}
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Fecha límite</span>
+      {{requisition.limit_date | date:"dd-MM-yyyy"}}
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Ofertas</span>
+      {{offers.length}}
+    </label>
+    <ul class="sq-list">
+      <li class="item" ng-class="{ 'selected': isSelected(offer)}" 
+        ng-repeat="offer in offers | orderBy:'priority'" 
+        ng-click="payOffer(offer)">
+          <span>₡</span>
+          <span>{{offer.amount}}</span>
+          <span>en {{offer.delivery_in_days}} d&iacute;as</span>
+          <span>{{delivery_types[offer.delivery_type]}}</span>
+        </li>
+    </ul>
+  </div>
+  <br/>
+</ion-content>
+<ion-footer-bar align-title="left" ng-if="user.isclient">
+  <h1 class="title">Solicitud #{{requisition.id}}</h1>
+</ion-footer-bar>
+

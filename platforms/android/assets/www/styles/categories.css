@@ -1,0 +1,17 @@
+.categories-list li {
+  text-align: center;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(245,123,32);
+  color: rgb(245,123,32);
+}
+
+.categories-list {
+  display:inline;
+  list-style: none;
+}
+
+.categories-list li.selected {
+  background-color: rgb(245,123,32);
+  color: white;
+}

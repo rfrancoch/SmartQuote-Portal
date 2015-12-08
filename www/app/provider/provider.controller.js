@@ -14,13 +14,28 @@
      
       vm.user = JSON.parse(window.localStorage.getItem("user"));
       vm.requisitions = [];
+      vm.delivery_types = [];
       vm.offer = {
         id_user: vm.user.id
       };
 
+      apiResource.getDeliveryTypes(function(data) {
+        vm.delivery_types = data;
+      });
+
       apiResource.getRequisitions(vm.user.id, function(data) {
         vm.requisitions = data;
       });
+
+      vm.selectedRequisition = function(){
+       var element = {};
+        angular.forEach(vm.requisitions, function(value, key) {
+            if (value != null && value['id'] == vm.offer.id_requisition) {
+              element = value;
+            }
+        });
+        return element;
+      };
 
       vm.save = function (){
         apiResource.setOffer(vm.offer,

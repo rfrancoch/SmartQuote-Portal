@@ -1,0 +1,23 @@
+.item-input input, .item-input textarea {
+  height: 100%;
+  width: 50%;
+  background-color: transparent;
+}
+
+.lineseparator {
+  width:80%;
+  border-color: rgb(245,123,32);
+}
+
+.input-label {
+  color: black;
+  font-weight: bold;
+}
+
+.item-input input {
+  color:black;
+}
+
+.item-input {
+  border-style: none;
+}
